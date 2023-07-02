@@ -18,9 +18,9 @@ const game= ()=>{
         playerOptions.forEach(option=>{
             option.addEventListener('click',function(){
 
-                const movesLeft=document.querySelector('.movesleft');
+                const movesLeft=document.querySelector('.movesLeft');
                 moves++;
-                movesLeft.innerText=`Moves Left: ${10-moves}`;
+                movesLeft.innerText=`Moves Left: ${3-moves}`;
 
                 // computer Choosing
 
@@ -30,9 +30,9 @@ const game= ()=>{
                 // Function to check who wins 
                 winner(this.innerText,computerChoice)
 
-                // calling game over after 10 moves 
+                // calling game over after 3 moves 
 
-                if(moves===10){
+                if(moves===3){
                     gameOver(playerOptions,movesLeft);
                 }
             })
@@ -52,7 +52,7 @@ const game= ()=>{
         }
         else if (player=='rock'){
             if(computer=='paper'){
-                results.textContent='computer Won'
+                results.textContent='Computer Won'
                 computerScore++;
                 computerScoreBoard.textContent=computerScore;
 
@@ -64,7 +64,7 @@ const game= ()=>{
         }
         else if (player=='scissors'){
             if(computer=='rock'){
-                results.textContent='computer Won'
+                results.textContent='Computer Won'
                 computerScore++;
                 computerScoreBoard.textContent=computerScore;
 
@@ -76,9 +76,10 @@ const game= ()=>{
         }
         else if (player=='paper'){
             if(computer=='scissors'){
-                results.textContent='computer Won'
+                results.textContent='Computer Won'
                 computerScore++;
                 computerScoreBoard.textContent=computerScore;
+                
 
             }else{
                 results.textContent='Player Won'
@@ -106,12 +107,18 @@ const game= ()=>{
 
         if(playerScore>computerScore){
             results.innerText='You Won The Game';
+            results.style.fontSize='2rem';
+            results.style.color='blue'
         }
         else if (playerScore< computerScore){
             results.innerText='You Lost The Game'
+            results.style.fontSize='2rem';
+            results.style.color='red'
         }
         else{
             results.innerText='Tie'
+            results.style.fontSize='2rem';
+            results.style.color='yellow'
         }
         reloadBtn.InnerText='Restart'
         reloadBtn.style.display='flex'
