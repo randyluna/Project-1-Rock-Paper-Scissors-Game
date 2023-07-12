@@ -1,4 +1,3 @@
-// logic of game 
 
 const game= ()=>{
     let playerScore=0;
@@ -38,7 +37,6 @@ const game= ()=>{
             })
         })
     }
-    //  Above code is good 
     // Function to decide winner
     const winner= (player,computer)=>{
         const results=document.querySelector('.results');
